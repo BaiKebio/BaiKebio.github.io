@@ -3,47 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>武汉百科分析仪器有限公司 - 专业分析仪器服务提供商</title>
-    <meta name="description" content="武汉百科分析仪器有限公司专业提供实验室分析仪器销售、租赁、维修保养及技术咨询等服务，服务于科研院校、检测机构及工业企业。">
-    <meta name="keywords" content="分析仪器,仪器销售,仪器租赁,仪器维修,实验室设备,武汉,技术支持,仪器保养,二手仪器">
+    <title>武汉百科分析仪器有限公司 - 专业实验室仪器服务提供商</title>
+    <meta name="description" content="武汉百科分析仪器有限公司专业提供实验室分子生物学，细胞生物学，分析仪器销售、维修保养及技术咨询等服务，服务于科研院校、检测机构及工业企业。">
+    <meta name="keywords" content="分子生物学设备，细胞生物学设备，分析仪器,仪器销售,仪器维修,实验室设备,武汉,技术支持,仪器保养">
+    <!-- 添加favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* 原样式保留，仅添加/修改部分 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Microsoft YaHei', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
             padding: 2rem 0;
             text-align: center;
         }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
+        .logo { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .tagline { font-size: 1.2rem; opacity: 0.9; }
         nav {
             background: #34495e;
             padding: 1rem 0;
@@ -51,17 +35,12 @@
             top: 0;
             z-index: 100;
         }
-        
         .nav-links {
             display: flex;
             justify-content: center;
             list-style: none;
         }
-        
-        .nav-links li {
-            margin: 0 1rem;
-        }
-        
+        .nav-links li { margin: 0 1rem; }
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -69,15 +48,11 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-        
-        .nav-links a:hover {
-            background-color: #3498db;
-        }
-        
-        main {
-            padding: 3rem 0;
-        }
-        
+        .nav-links a:hover { background-color: #3498db; }
+        /* 导航激活状态 */
+        .nav-links a.active { background-color: #3498db; }
+
+        main { padding: 3rem 0; }
         .section {
             background: white;
             margin: 2rem 0;
@@ -86,12 +61,10 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .section:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
         .service-list li {
             margin: 10px 0;
             padding: 8px;
@@ -99,11 +72,7 @@
             background-color: #f8f9fa;
             transition: background-color 0.3s;
         }
-        
-        .service-list li:hover {
-            background-color: #e9ecef;
-        }
-        
+        .service-list li:hover { background-color: #e9ecef; }
         footer {
             background: #2c3e50;
             color: white;
@@ -111,49 +80,33 @@
             padding: 2rem 0;
             margin-top: 3rem;
         }
-        
-        .contact-info {
-            margin: 1rem 0;
-        }
-        
+        .contact-info { margin: 1rem 0; }
         .contact-item {
             margin: 0.5rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
         .contact-item i {
             margin-right: 10px;
             color: #3498db;
+            width: 20px; /* 固定宽度，对齐 */
         }
-        
         .phone-link {
             color: #2c3e50;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
-        
-        .phone-link:hover {
-            color: #3498db;
-        }
-        
-        .social-links {
-            margin: 1rem 0;
-        }
-        
+        .phone-link:hover { color: #3498db; }
+        .social-links { margin: 1rem 0; }
         .social-links a {
             color: white;
             margin: 0 0.5rem;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
-        .social-links a:hover {
-            color: #3498db;
-        }
-        
+        .social-links a:hover { color: #3498db; }
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -169,47 +122,42 @@
             text-decoration: none;
             opacity: 0;
             transition: opacity 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1.2rem;
         }
-        
-        .back-to-top.visible {
-            opacity: 1;
-        }
-        
-
-        .company-logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-        
-        .service-image {
+        .back-to-top.visible { opacity: 1; }
+        .company-logo { max-width: 200px; height: auto; margin-bottom: 1rem; }
+        .service-image, .team-photo {
             width: 100%;
             max-width: 400px;
             height: auto;
             border-radius: 8px;
             margin: 1rem 0;
         }
-        
-        .team-photo {
+        /* 移动端导航菜单（汉堡）简单示例 */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin: 1rem 0;
+            text-align: right;
+            padding-right: 20px;
         }
-        
         @media (max-width: 768px) {
             .nav-links {
                 flex-direction: column;
                 align-items: center;
+                display: none; /* 默认隐藏，通过JS点击显示 */
             }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-            
-            .logo {
-                font-size: 2rem;
+            .nav-links.show { display: flex; }
+            .nav-links li { margin: 0.5rem 0; }
+            .logo { font-size: 2rem; }
+            .menu-toggle {
+                display: block;
             }
         }
     </style>
@@ -217,20 +165,21 @@
 <body>
     <header>
         <div class="container">
-            <!-- 公司Logo占位，请替换为实际图片 -->
-            <img src="images/logo.png" alt="武汉百科分析仪器有限公司" class="company-logo">
+            <img src="images/logo.png" alt="武汉百科分析仪器有限公司 Logo" class="company-logo">
             <div class="logo">武汉百科分析仪器有限公司</div>
-            <div class="tagline">专业分析仪器服务提供商</div>
+            <div class="tagline">专业实验室分析仪器服务提供商</div>
         </div>
     </header>
     
     <nav>
         <div class="container">
-            <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#services">服务项目</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#contact">联系我们</a></li>
+            <!-- 移动端菜单按钮 -->
+            <button class="menu-toggle" id="menuToggle" aria-label="导航菜单"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">首页</a></li>
+                <li><a href="#services" class="nav-link">服务项目</a></li>
+                <li><a href="#about" class="nav-link">关于我们</a></li>
+                <li><a href="#contact" class="nav-link">联系我们</a></li>
             </ul>
         </div>
     </nav>
@@ -244,20 +193,18 @@
         <section id="services" class="section">
             <h2>服务项目</h2>
             <ul class="service-list">
+                <li><strong>分子生物学，细胞生物学设备仪器销售</strong> - 提供分子生物学，细胞生物学全套进口/国产实验室设备。</li>
                 <li><strong>分析仪器销售</strong> - 提供色谱、光谱、质谱等各类进口/国产分析仪器及配件。</li>
-                <li><strong>仪器租赁服务</strong> - 灵活租期，降低短期项目或预算有限的实验成本。</li>
                 <li><strong>维修保养支持</strong> - 资深工程师快速响应，提供预防性维护及故障维修。</li>
                 <li><strong>技术咨询与培训</strong> - 仪器选型、方法开发、操作培训及实验室规划建议。</li>
             </ul>
-            <!-- 服务项目示意图片，请替换为实际图片 -->
-            <img src="images/services.png" alt="分析仪器服务" class="service-image">
+            <img src="images/services.png" alt="分析仪器服务示例" class="service-image">
         </section>
         
         <section id="about" class="section">
             <h2>关于我们</h2>
             <p>公司核心团队拥有十年以上分析仪器行业经验，既有来自知名仪器厂商的资深工程师，也有丰富实验室管理经验的技术专家。我们秉承“专业、诚信、高效”的服务理念，已为华中地区百余家客户提供仪器整体解决方案。无论是设备选型、安装调试，还是后续维修、培训，我们都力求超越客户期望。</p>
-            <!-- 团队照片占位，请替换为真实团队图片 -->
-            <img src="images/team.png" alt="武汉百科分析仪器有限公司团队" class="team-photo">
+            <img src="images/team.png" alt="武汉百科分析仪器有限公司技术团队" class="team-photo">
         </section>
         
         <section id="contact" class="section">
@@ -265,36 +212,36 @@
             <p>如有任何仪器需求或技术问题，欢迎通过以下方式与我们取得联系：</p>
             <div class="contact-info">
                 <div class="contact-item">
-                    <i>📞</i> <a href="tel:15527669292" class="phone-link">田经理 15527669292</a>
+                    <i class="fas fa-phone-alt"></i> <a href="tel:18371331113" class="phone-link">田经理 18371331113</a>
                 </div>
                 <div class="contact-item">
-                    <i>✉️</i> <span>邮箱: 15527669292@163.com</span>
+                    <i class="fas fa-envelope"></i> <span>邮箱: 18371331113@163.com</span>
                 </div>
                 <div class="contact-item">
-                    <i>📍</i> <span>武汉市洪山区南湖大道48号芷岸龙庭11栋2单元1504室</span>
+                    <i class="fas fa-map-marker-alt"></i> <span>武汉市洪山区南湖大道48号芷岸龙庭11栋2单元1504室</span>
                 </div>
             </div>
-            
-            <!-- 保留社交链接占位，可替换为公司官方主页或技术社区 -->
             <div class="social-links">
-                <a href="#" target="_blank">官方博客</a> |
-                <a href="#" target="_blank">仪器社区</a>
+                <a href="#" target="_blank"><i class="fab fa-weixin"></i> 官方微信</a> 
+                <a href="#" target="_blank"><i class="fab fa-weibo"></i> 官方微博</a>
             </div>
         </section>
     </main>
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 武汉百科分析仪器有限公司. 保留所有权利.</p>
+            <p>&copy; <span id="currentYear"></span> 武汉百科分析仪器有限公司. 保留所有权利.</p>
         </div>
     </footer>
     
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">↑</button>
 
     <script>
-        // 返回顶部按钮功能
+        // 动态更新版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 返回顶部按钮
         const backToTopButton = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('visible');
@@ -302,29 +249,59 @@
                 backToTopButton.classList.remove('visible');
             }
         });
-        
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // 平滑滚动 + 导航高亮
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
         
-        // 平滑滚动到锚点
+        function highlightNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', highlightNav);
+
+        // 平滑滚动（同时处理锚点偏移）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinksContainer = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('show');
+        });
+        // 点击链接后自动隐藏菜单（移动端）
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinksContainer.classList.remove('show');
                 }
             });
         });
