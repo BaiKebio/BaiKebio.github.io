@@ -11,7 +11,7 @@
     <!-- Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* 原样式保留，仅添加/修改部分 */
+        /* 全局样式 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Microsoft YaHei', Arial, sans-serif;
@@ -49,7 +49,6 @@
             transition: background-color 0.3s;
         }
         .nav-links a:hover { background-color: #3498db; }
-        /* 导航激活状态 */
         .nav-links a.active { background-color: #3498db; }
 
         main { padding: 3rem 0; }
@@ -65,6 +64,8 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
+        /* 服务列表样式（保持不变） */
         .service-list li {
             margin: 10px 0;
             padding: 8px;
@@ -73,6 +74,62 @@
             transition: background-color 0.3s;
         }
         .service-list li:hover { background-color: #e9ecef; }
+
+        /* 新增：产品卡片网格（参考 DMPMLab 风格） */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .product-card {
+            flex: 1 1 280px;
+            max-width: 300px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .product-card h3 {
+            margin: 15px 0 10px;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+        .product-card p {
+            padding: 0 15px;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .product-card .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .product-card .btn:hover {
+            background: #2c3e50;
+        }
+
         footer {
             background: #2c3e50;
             color: white;
@@ -90,7 +147,7 @@
         .contact-item i {
             margin-right: 10px;
             color: #3498db;
-            width: 20px; /* 固定宽度，对齐 */
+            width: 20px;
         }
         .phone-link {
             color: #2c3e50;
@@ -128,14 +185,13 @@
         }
         .back-to-top.visible { opacity: 1; }
         .company-logo { max-width: 200px; height: auto; margin-bottom: 1rem; }
-        .service-image, .team-photo {
+        .service-image {
             width: 100%;
             max-width: 400px;
             height: auto;
             border-radius: 8px;
             margin: 1rem 0;
         }
-        /* 移动端导航菜单（汉堡）简单示例 */
         .menu-toggle {
             display: none;
             background: transparent;
@@ -151,14 +207,13 @@
             .nav-links {
                 flex-direction: column;
                 align-items: center;
-                display: none; /* 默认隐藏，通过JS点击显示 */
+                display: none;
             }
             .nav-links.show { display: flex; }
             .nav-links li { margin: 0.5rem 0; }
             .logo { font-size: 2rem; }
-            .menu-toggle {
-                display: block;
-            }
+            .menu-toggle { display: block; }
+            .product-grid { gap: 20px; }
         }
     </style>
 </head>
@@ -173,11 +228,11 @@
     
     <nav>
         <div class="container">
-            <!-- 移动端菜单按钮 -->
             <button class="menu-toggle" id="menuToggle" aria-label="导航菜单"><i class="fas fa-bars"></i></button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link">首页</a></li>
                 <li><a href="#services" class="nav-link">服务项目</a></li>
+                <li><a href="#products" class="nav-link">产品中心</a></li> <!-- 新增导航链接 -->
                 <li><a href="#about" class="nav-link">关于我们</a></li>
                 <li><a href="#contact" class="nav-link">联系我们</a></li>
             </ul>
@@ -201,10 +256,42 @@
             <img src="images/services.png" alt="分析仪器服务示例" class="service-image">
         </section>
         
+        <!-- 新增产品中心部分 -->
+        <section id="products" class="section">
+            <h2>产品中心</h2>
+            <p>我们提供以下精选产品，欢迎咨询：</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/product1.jpg" alt="PCR仪">
+                    <h3>荧光定量PCR仪</h3>
+                    <p>进口品牌，高灵敏度、精准温控，适用于基因表达分析、病原检测等。</p>
+                    <a href="#contact" class="btn">询价</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/product2.jpg" alt="高效液相色谱仪">
+                    <h3>高效液相色谱仪</h3>
+                    <p>模块化设计，配备紫外/荧光检测器，满足药物分析、食品安全检测需求。</p>
+                    <a href="#contact" class="btn">询价</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/product3.jpg" alt="二氧化碳培养箱">
+                    <h3>二氧化碳培养箱</h3>
+                    <p>精密控制CO₂浓度和温度，为细胞培养提供稳定环境，可选高温灭菌。</p>
+                    <a href="#contact" class="btn">询价</a>
+                </div>
+                <div class="product-card">
+                    <img src="images/product4.jpg" alt="台式离心机">
+                    <h3>台式高速冷冻离心机</h3>
+                    <p>多种转子可选，最大离心力达20000×g，适用于DNA/RNA提取、蛋白纯化。</p>
+                    <a href="#contact" class="btn">询价</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">更多产品请直接<a href="#contact" style="color:#3498db;">联系我们</a>获取详细资料。</p>
+        </section>
+        
         <section id="about" class="section">
             <h2>关于我们</h2>
             <p>公司核心团队拥有十年以上分析仪器行业经验，既有来自知名仪器厂商的资深工程师，也有丰富实验室管理经验的技术专家。我们秉承“专业、诚信、高效”的服务理念，已为华中地区百余家客户提供仪器整体解决方案。无论是设备选型、安装调试，还是后续维修、培训，我们都力求超越客户期望。</p>
-           
         </section>
         
         <section id="contact" class="section">
@@ -275,7 +362,6 @@
         }
         window.addEventListener('scroll', highlightNav);
 
-        // 平滑滚动（同时处理锚点偏移）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -297,7 +383,6 @@
         menuToggle.addEventListener('click', () => {
             navLinksContainer.classList.toggle('show');
         });
-        // 点击链接后自动隐藏菜单（移动端）
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
