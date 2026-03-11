@@ -116,12 +116,8 @@
             color: #666;
             font-size: 0.9rem;
             line-height: 1.5;
-            /* 限制最多3行，超出省略 */
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 4.5rem; /* 大约3行高度 */
+            /* 不再限制行数，完整显示 */
+            min-height: auto;
         }
         .product-card .btn {
             display: inline-block;
