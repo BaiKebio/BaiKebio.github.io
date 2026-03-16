@@ -116,10 +116,7 @@
             /* 完整显示描述，不截断 */
             min-height: auto;
         }
-        .contact-item a[href^="mailto:"] {
-           color: #333;                /* 黑色字体（可微调） */
-           text-decoration: none;      /* 去掉下划线 */
-        }
+        /* 已删除冲突的邮箱专用规则，邮箱统一使用 .phone-link 样式 */
         .product-card .btn {
             display: inline-block;
             margin-top: 15px;
@@ -165,7 +162,7 @@
         .phone-link:hover { color: #3498db; }
         .social-links { margin: 1rem 0; }
         .social-links a {
-            color: white;
+            color: #2c3e50;          /* 修复：改为深色，可见 */
             margin: 0 0.5rem;
             text-decoration: none;
             transition: color 0.3s;
@@ -223,7 +220,7 @@
             <!-- 如果实际无logo图片，可暂时隐藏或保留占位 -->
             <img src="images/logo.png" alt="武汉百科分析仪器有限公司 Logo" class="company-logo" loading="lazy">
             <div class="logo">武汉百科分析仪器有限公司</div>
-            <div class="tagline">专业实验室分析仪器服务提供商</div>
+            <div class="tagline">专业实验室生产制造仪器销售服务提供商</div>
         </div>
     </header>
     
@@ -249,10 +246,10 @@
         <section id="services" class="section">
             <h2>服务项目</h2>
             <ul class="service-list">
-                <li><strong>分子生物学，细胞生物学设备仪器销售</strong> - 提供分子生物学，细胞生物学全套进口/国产实验室设备。</li>
+                <li><strong>分子生物学，细胞生物学设备仪器生产，销售</strong> - 提供分子生物学，细胞生物学全套进口/国产实验室设备。</li>
                 <li><strong>分析仪器销售</strong> - 提供色谱、光谱、质谱等各类进口/国产分析仪器及配件。</li>
                 <li><strong>维修保养支持</strong> - 资深工程师快速响应，提供预防性维护及故障维修。</li>
-                <li><strong>技术咨询与培训</strong> - 仪器选型、方法开发、操作培训及实验室规划建议。</li>
+                <li><strong>技术咨询与培训</strong> - 仪器生产，选型、方法开发、操作培训及实验室规划建议。</li>
             </ul>
         </section>
         
@@ -301,7 +298,7 @@
         
         <section id="about" class="section">
             <h2>关于我们</h2>
-            <p>公司核心团队拥有十年以上分析仪器行业经验，既有来自知名仪器厂商的资深工程师，也有丰富实验室管理经验的技术专家。我们秉承“专业、诚信、高效”的服务理念，已为华中地区百余家客户提供仪器整体解决方案。无论是设备选型、安装调试，还是后续维修、培训，我们都力求超越客户期望。</p>
+            <p>公司核心团队拥有十年以上实验室设备，分析仪器行业经验，既有来自知名设备仪器厂商的资深工程师，也有丰富实验室管理经验的技术专家。我们秉承“专业、诚信、高效”的服务理念，已为华中地区百余家客户提供仪器整体解决方案。无论是设备选型、安装调试，还是后续维修、培训，我们都力求超越客户期望。</p>
         </section>
         
         <section id="contact" class="section">
@@ -360,7 +357,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 导航高亮（首次加载时执行一次）
+        // 导航高亮
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
         
@@ -380,7 +377,7 @@
             });
         }
         window.addEventListener('scroll', highlightNav);
-        window.addEventListener('load', highlightNav); // 加载完成后立即高亮
+        window.addEventListener('load', highlightNav);
 
         // 平滑滚动（锚点）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
