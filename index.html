@@ -141,10 +141,11 @@
         }
         .contact-info { margin: 1rem 0; }
         .contact-item {
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+           display: flex;
+           align-items: center;
+           flex-wrap: wrap;      /* 移动端换行 */
+           gap: 10px;            /* 控制元素之间的间距（即空格大小） */
+           justify-content: center; /* 可选，居中显示 */
         }
         .contact-item i {
             margin-right: 10px;
@@ -303,19 +304,17 @@
             <h2>联系我们</h2>
             <p>如有任何仪器需求或技术问题，欢迎通过以下方式与我们取得联系：</p>
             <div class="contact-info">
-                <!-- 田经理信息 -->
+                <!-- 田经理 -->
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     田经理：<a href="tel:18371331113" class="phone-link">18371331113</a>
-                    <span style="margin: 0 8px;">|</span>
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:18371331113@163.com">18371331113@163.com</a>
                 </div>
-                <!-- 高经理信息 -->
+                <!-- 高经理 -->
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     高经理：<a href="tel:15527669292" class="phone-link">15527669292</a>
-                    <span style="margin: 0 8px;">|</span>
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:15527669292@163.com">15527669292@163.com</a>
                 </div>
